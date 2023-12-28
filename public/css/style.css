@@ -1,0 +1,226 @@
+body {
+    font-family: 'Source Serif 4', serif !important;
+
+}
+
+/* Cards */
+
+.card {
+    border: none !important;
+    margin-bottom: 2rem;
+    border-radius: .3rem !important;
+    border: 2px solid black !important;
+    height: 4.2rem !important;
+    border: 1px solid rgba(0, 0, 0, 0.2) !important;
+    transition: ease-in-out 0.3s;
+    box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.2);
+    width: 23rem !important;
+
+}
+
+.card-text {
+    font-size: 1.2rem !important;
+    font-family: sans-serif !important;
+    color: #444444 !important;
+    margin-left: .3rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-content: center;
+}
+
+.listing-link {
+    text-decoration: none;
+}
+
+.card-text i {
+    font-size: 25px;
+    padding-right: 2px;
+    line-height: 1;
+    margin-top: .2rem !important;
+}
+
+.amount {
+    margin-top: .2rem !important;
+}
+
+.diamondColor {
+    margin-top: .2rem !important;
+    margin-left: -.5rem;
+    background: linear-gradient(#ea69e3, #ea69e3, #7b2a76);
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.diamondColor {
+    color: #FFD700; /* Set the color for the diamond icon */
+}
+
+/* Animation for the diamond icon */
+@keyframes bubbleAnimation {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-5px);
+    }
+}
+
+/* Apply the animation to the diamond icon */
+.diamond-bubble {
+    animation: bubbleAnimation 1s infinite;
+}
+
+.far {
+    font-weight: 400 !important;
+   
+}
+
+.fa-gem:before {
+    content: "\f3a5";
+}
+
+*,
+::after,
+::before {
+    box-sizing: border-box;
+}
+
+
+.down {
+    margin-top: .3rem;
+    color: red;
+    opacity: .9 !important;
+}
+
+
+/* card Effect */
+.card-img-overlay {
+    opacity: 0;
+}
+
+.card-img-overlay:hover {
+    opacity: 0.1;
+    background-color: red;
+}
+
+/* New page */
+.add-btn {
+    background-color: #fe424d !important;
+    border: none !important;
+    width: 6rem;
+    font-size: 1rem !important;
+}
+
+
+/* Edit page */
+.edit-btn {
+    background-color: #fe424d !important;
+    border: none !important;
+    width: 6rem;
+    font-size: 1rem !important;
+
+}
+
+
+.container {
+    flex: 1;
+}
+
+/* Rewards */
+.container1 {
+    padding-right: 15px !important;
+    padding-left: 15px !important;
+    margin-right: auto !important;
+    margin-left: auto !important;
+}
+
+.row {
+    margin-left: -15px !important;
+    margin-right: -15px !important;
+}
+
+/* Home */
+
+.big-container {
+    width: 1260px !important;
+    margin-left: 5rem !important;
+}
+
+
+.home-img {
+    margin-top: 1rem !important;
+    width: 100% !important;
+    height: auto !important;
+}
+
+.mainHeading {
+    width: 100% !important;
+    height: 100vh !important;
+    font-size: 3rem !important;
+    color: #bc832a;
+    font-family: "Poppins", sans-serif;
+    margin-top: 1rem !important;
+}
+
+.img-fluid {
+    max-width: 100%;
+    height: auto;
+    margin-top: 1rem;
+}
+
+.mt-md-4 {
+    margin-top: 4rem !important;
+}
+
+.btnSet {
+    background-color: darkgrey !important;
+    color: darkred !important;
+    box-shadow: 1px 6px 21px #bc832a !important;
+}
+
+.btnSet i {
+    margin-right: 0.5rem;
+}
+
+.rounded-4 {
+    border-radius: 1rem !important;
+}
+
+.fs-2 {
+    font-size: 2rem !important;
+}
+
+.py-3 {
+    padding-top: 1rem !important;
+    padding-bottom: 1rem !important;
+}
+
+.w-75 {
+    max-width: 100% !important;
+}
+
+.nav-link {
+    display: block;
+    padding: var(--bs-nav-link-padding-y) var(--bs-nav-link-padding-x);
+    font-size: var(--bs-nav-link-font-size);
+    font-weight: var(--bs-nav-link-font-weight);
+    text-decoration: none;
+    background: 0 0;
+    border: 0;
+    transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out;
+}
+
+a {
+    text-decoration: underline;
+}
+
+.pt-0 {
+    padding-top: 0 !important;
+}
+
+.fw-bold {
+    font-weight: 700 !important;
+}

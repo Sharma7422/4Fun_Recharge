@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>4Fun Recharge</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
+    <script src="https://cdn.example.com/path/to/qrcode.min.js"></script>
+
+    <style>
+        .scanner-image {
+            width: 200px;
+            height: 200px;
+            margin: 10px auto;
+        }
+
+        .scanner-image img {
+            width: 100%;
+        }
+    </style>
+
+</head>
+
+<body>
+    <!-- <div class="modal fade" id="myModal"> -->
+    <div class="modal-dialog">
+        <div class="modal-content p-5">
+            <div class="my-2">
+                <label for="payno" class="fontSet">Mobile No. :</label>
+                <input type="text" value="7357614721" id="payno" readonly class="border-0 brd fontSet"><br>
+                <label for="payupi" class="fontSet">Upi Id. :</label>
+                <input type="text" value="ashok4721@paytm" id="payupi" readonly class="border-0 brd fontSet">
+
+            </div>
+            <div class="d-flex justify-content-between my-2">
+                <button onclick="noPay()" class="btn btn-warning fontSet"> Copy No.</button>
+                <button onclick="upiPay()" class="btn btn-danger fontSet mx-sm-0 mx-2">Copy Upi Id</button>
+                <div class="dropdown">
+                    <button class="btn btn-primary fontSet" type="button" id="dropdownMenuButton"
+                        data-bs-toggle="dropdown">
+                        Open Apps
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        <form class="ps-3 py-3">
+                            <div class="form-check py-2">
+                                <input class="form-check-input" type="radio" name="exampleRadios" id="radio2"
+                                    value="googlepay">
+                                <label class="form-check-label" for="radio2">
+                                    Pay Now
+                                </label>
+                            </div>
+                            <button class="btn btn-primary px-4" id="dropdownSubmitButton">Ok</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <form action="/offlinediamond/upload" class="was-validated" method="post" enctype="multipart/form-data">
+
+                <p class="text-center fw-bold">Scan Qr Code and Pay For Recharge</p>
+                <div class="scanner-image">
+                    <!-- <img src="barcode.jpg" alt="Bar Code"> -->
+                    <img src="/Assets/barcode.jpg" alt="Bar Code"><h5>&nbsp;&nbsp;&nbsp;Ashok Kadwasla</h5>
+                </div>
+
+                <!-- <div id="qrcode-container" class="text-center d-flex justify-content-center">
+                    </div> -->
+                <div class="mb-3">
+                    <label for="appId" class="form-label">4Fun Id:</label>
+                    <input type="text" class="form-control" id="Id" placeholder="Enter id" name="Id" required
+                        autocomplete="off">
+                    <div class="valid-feedback">Valid.</div>
+                    <div class="invalid-feedback">Please fill out this field.</div>
+                </div>
+                <div class="mb-3">
+                    <label for="amount" class="form-label">Amount.:</label>
+                    <input type="number" class="form-control" id="amount" placeholder="Enter Amount" name="amount"
+                        required autocomplete="off">
+                    <div class="valid-feedback">Valid.</div>
+                    <div class="invalid-feedback">Please fill out this field.</div>
+                </div>
+                <div class="mb-3">
+                    <label for="screen_shot" class="form-label">Screen Shot:</label>
+                    <input type="file" class="form-control" id="screen_shot" name="screen_shot" accept="image/*"
+                        required>
+                    <div class="valid-feedback">Valid.</div>
+                    <div class="invalid-feedback">Please fill out this field.</div>
+                </div>
+
+                <div class="form-check mb-3">
+                    <input class="form-check-input" type="checkbox" id="myCheck" name="remember" required>
+                    <label class="form-check-label" for="myCheck">I agree To Submit Details are correct.</label>
+                    <div class="valid-feedback">Valid.</div>
+                    <div class="invalid-feedback">Check this checkbox to continue.</div>
+                </div>
+                <button type="submit" class="btn btn-primary" id="button" value="Add Value">Submit</button>
+                <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+            </form>
+        </div>
+    </div>
+    <!-- </div> -->
+    <div id="qrcode-container" class="text-center d-flex justify-content-center"></div>
+
+    <br><br>
+    <% if (req.session.isAdmin) { %>
+        <div class="d-flex justify-content-center">
+            <a href="/admin/offlinediamond/<%= listing._id %>/edit">
+                <button class="btn btn-success me-2" style="width: 100px; font-size: 1.3rem;">Edit</button>
+            </a>
+            <form method="POST" action="/admin/offlinediamond/<%=listing._id%>?_method=DELETE">
+                <button class="btn btn-warning" style="font-size: 1.3rem; color: whitesmoke;">Delete this Id</button>
+            </form>
+        </div>
+        <% } %>
+
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+                integrity="sha384-MQXWP1u8t22oGw4zs7yGp8iV94C2Xx8bMFKJ8mrRPA7k9cE+42pH5RMddH5/ebmu"
+                crossorigin="anonymous"></script>
+            <script src="public\JS\script.js"></script>
+
+
+
+</body>
+
+</html>

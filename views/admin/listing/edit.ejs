@@ -1,0 +1,38 @@
+<% layout('/layouts/boilerplate') %>
+
+    <body>
+        <div class="row mt-3">
+            <div class="col-8 offset-1">
+                <br>
+                <h3>Edit this Id</h3>
+                <br>
+                <form method="post" action="/admin/offlinediamond/<%= listing._id %>?_method=PUT"
+                    class="needs-validation">
+                    <div class="mb-3">
+                        <label for="diamond" class="form-label">Diamond Value</label>
+                        <input name="listing[diamond]" value="<%= listing.diamond %>" type="text" class="form-control"
+                            required autocomplete="off">
+                        <div class="valid-feedback">Valid.</div>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="price" class="form-label">Price</label>
+                        <input name="listing[price]" value="<%= listing.price %>" type="text" class="form-control"
+                            required autocomplete="off">
+                        <div class="valid-feedback">Valid.</div>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="extra" class="form-label">Percent Value</label>
+                        <input name="listing[extra]" value="<%= listing.extra %>" type="text" class="form-control"
+                            required autocomplete="off">
+                        <div class="valid-feedback">Valid.</div>
+                    </div>
+                    <br>
+
+                    <button type="submit" class="btn btn-dark edit-btn">Edit</button>
+                </form>
+                <br>
+            </div>
+        </div>
+    </body>

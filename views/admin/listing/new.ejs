@@ -1,0 +1,40 @@
+<%- layout('/layouts/boilerplate.ejs') %>
+
+    <body>
+
+        <!-- <h1>Hello world</h1> -->
+        <div class="row mt-3">
+            <div class="col-8 offset-1">
+                <br>
+                <h3>Create a New Listing</h3>
+                <br>
+
+                <form method="post" action="/offlinediamond" class="needs-validation" novalidate>
+                    <div class="mb-3">
+                        <label for="diamond" class="form-label">Enter Diamond Value</label>
+                        <input name="listing[diamond]" placeholder="Enter Diamond Value" type="text"
+                            class="form-control" required autocomplete="off">
+                        <div class="valid-feedback">Valid.</div>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="price" class="form-label">Enter the Price</label>
+                        <input name="listing[price]" placeholder="Enter the Price" type="text" class="form-control"
+                            required autocomplete="off">
+                        <div class="valid-feedback">Valid.</div>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="extra" class="form-label">Enter Percent Value</label>
+                        <input name="listing[extra]" placeholder="Enter Percent Value" type="text" class="form-control"
+                            required autocomplete="off">
+                        <div class="valid-feedback">Valid.</div>
+                    </div>
+                    <br>
+
+                    <button class="btn btn-dark add-btn">Add Id</button>
+                </form>
+                <br>
+            </div>
+        </div>
+    </body>
