@@ -10,24 +10,25 @@ const session = require("express-session");
 const MongoStore = require('connect-mongo');
 const multer = require('multer');
 const { cloudinary } = require('./cloudConfig');
+const compression = require('compression');
 
 
 
 
 const ejsMate = require("ejs-mate");
 const methodOverride = require("method-override");
-const twilio = require('twilio');
+// const twilio = require('twilio');
 
 
 
 const dbUrl = process.env.ATLASDB_URL;
 
 
-// Initialize Twilio
-const accountSid =process.env.ACCOUNT_SID;
-const authToken =process.env.TOKEN;
-const twilioPhoneNumber = '+12059906352'; // Include the '+' and country code
-const client = twilio(accountSid, authToken);
+// // Initialize Twilio
+// const accountSid =process.env.ACCOUNT_SID;
+// const authToken =process.env.TOKEN;
+// const twilioPhoneNumber = '+12059906352'; // Include the '+' and country code
+// const client = twilio(accountSid, authToken);
 
 // Middleware to connect to MongoDB
 async function connectToDB() {
@@ -52,6 +53,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(methodOverride("_method"));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use('/uploads', express.static(path.join(__dirname, 'public', 'uploads')));
+app.use(compression());
 
 
 // connect mongo session
@@ -341,18 +343,18 @@ app.post("/offlinediamond/upload", upload.single('screen_shot'), async (req, res
 
     await newUser.save();
 
-    // Send SMS notification using Twilio
-    const ownerPhoneNumber = '+917357614721'; // Include the '+' and country code
-    const formattedOwnerPhoneNumber = `+${ownerPhoneNumber.substring(1)}`; // Format the phone number
-    const messageBody = `New user submitted: Id - ${Id}, Amount - ${amount}`;
+    // // Send SMS notification using Twilio
+    // const ownerPhoneNumber = '+917357614721'; // Include the '+' and country code
+    // const formattedOwnerPhoneNumber = `+${ownerPhoneNumber.substring(1)}`; // Format the phone number
+    // const messageBody = `New user submitted: Id - ${Id}, Amount - ${amount}`;
 
-    console.log("Sending SMS to:", formattedOwnerPhoneNumber);
+    // console.log("Sending SMS to:", formattedOwnerPhoneNumber);
 
-    await client.messages.create({
-      body: messageBody,
-      from: twilioPhoneNumber,
-      to: ownerPhoneNumber,
-    });
+    // await client.messages.create({
+    //   body: messageBody,
+    //   from: twilioPhoneNumber,
+    //   to: ownerPhoneNumber,
+    // });
 
     res.redirect("/offlinediamond");
   } catch (err) {

@@ -35,12 +35,12 @@ function closeRewardImageModal() {
 
 
 function noPay() {
-  // Get the text field
+
   var copyText = document.getElementById("payno");
 
 
   copyText.select();
-  copyText.setSelectionRange(0, 99999); // For mobile devices
+  copyText.setSelectionRange(0, 99999); 
 
 
   navigator.clipboard.writeText(copyText.value);
